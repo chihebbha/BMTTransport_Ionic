@@ -1,0 +1,40 @@
+<ion-view view-title="Show claim">
+  <ion-content>
+      
+    <div ng-controller="ReclamationCtrl">
+        
+         <div align="center"><br> <img src="../img/logo.png"/></div>
+     <br><br>
+        <div  align="center" ><a href="#/tab/claim"><button class="btn btn-info" >Add Claim</button></a></div>    <div  align="center" ><br><h2>Claims</h2><br></div>
+     <div ng-repeat="reclamation in reclamations">
+         <div class="row responsive-sm">
+             
+             <div align="center">
+                 <th>
+ <p> <font  align="right" > <i align="center">Delivred at :  {{reclamation.dateRec_Reclamation | date:'yyyy-MM-dd'}} 
+<br>
+     <b>Subject :{{reclamation.sujet_Reclamation}}</b><br>
+     text of reclamation :<br> {{reclamation.message_Reclamation}}
+ <br>  
+ reclamed by (Mr/Mme) {{reclamation.customer.nom_Person}} {{reclamation.customer.prenom_Person}} 
+</p>
+        
+         </th>
+           
+     <div align="right"  > 
+         
+<button  ng-click="supprimer(reclamation.id_Reclamation,$index)"><img  src="../img/18427.png"/></button>
+      
+      
+      </div> 
+      </div>
+    
+
+    </div>
+         </div>
+      
+                
+</div>
+  </ion-content>
+</ion-view>
+  

@@ -1,0 +1,53 @@
+<ion-view view-title="claiming">
+     <div ng-controller="AddCtrl" >
+
+  <ion-content>
+    <form >
+         <div align="center"> <br><img src="../img/logo.png"/></div>
+     
+        <br><br><br><br><br>
+      <div class="list">
+          
+<label class="item item-input">
+    
+ <span class="input-label" >Date claim</span>
+<input type="text" ng-model="reclamation.date" value="currentdate" ng-if="true=false" readonly />
+    <label>{{'' | currentdate}}</label>
+    <br>
+    
+  </label>
+          
+        <label class="item item-input">
+          <span class="input-label">Text of claim</span>
+          <input type="text" ng-model="reclamation.text" class="search-box">
+        </label>
+          
+          <label class="item item-input">
+          <span class="input-label">Subject of claim</span>
+          <input type="text" ng-model="reclamation.subject" class="search-box">
+        </label>
+          
+          
+          <label class="item item-input">
+          <span class="input-label">Customer</span>
+          <input type="number" ng-model="reclamation.number" class="search-box">
+        </label>
+          
+          
+          
+          
+ <label class="item">
+     
+     
+   <div align="center">   
+<button ng-click="ajouter(reclamation.text,reclamation.subject,reclamation.number)" class="btn btn-info" type="submit">Claim </button>
+     </div>
+         
+    
+   
+        </label>
+      
+    </form>
+  </ion-content>
+      </div>
+</ion-view>

@@ -1,0 +1,39 @@
+    <ion-view view-title="Chercher réservation" >
+    <div ng-controller="serviceCtrl" >
+       
+  <ion-content >
+      <div align="center"> <br><img src="../img/logo.png"/></div>
+      <ion-list>
+          <br>
+  <i>  Minimum price :</i><center> <input type="range" ng-model="min" max='{{max}}' />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{min}} Dt<br><br></center>
+Maximum price :<center><input type="range" ng-model="max" min="{{min}}" max="2000"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{max}} Dt</center>
+          <br><br><br>
+        <div align="center">  <a href="#/tab/AddReservation"> <button type="button" class="btn btn-info" >Add Reservation</button></a></div>
+         
+          <br>
+</ion-list>
+    <ion-list>
+        
+        
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="services in service " ng-if="services.prix_Reservation > min && services.prix_Reservation < max"  type="item-text-wrap">
+          
+              <table>  
+        <tr>
+            <td>
+       <font size="2" > <i align="left"> {{services.date_Reservation | date:'yyyy-MM-dd'}}  <font color="#13b6ff" align="right">{{services.date_Reservation | date:'HH:mm'}}</font></i></font>
+        
+        <p>{{services.customer.nom_Person}} {{services.customer.prenom_Person}} a effectué cette<br> reservation pour la ligne de <br><b>{{services.itinerary.arret_Itinerary}}</b> et elle coute <b>{{services.prix_Reservation}}</b> Dt</p>
+          
+          
+       </td><td align="center">   
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <img  src="../img/18427.png" ng-click="supprimer(services.id_Reservation,$index)"/></td>
+                  </tr>
+         </table>
+      </ion-item>
+        
+    </ion-list>
+  </ion-content>
+          
+        </div>
+</ion-view>

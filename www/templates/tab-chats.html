@@ -1,0 +1,80 @@
+
+ <div ng-controller="AddVehicle" class="item-remove-animate item-icon-right" >
+<ion-view view-title="Manage Fleet" >
+  <ion-content >
+      
+        
+   
+    
+      
+      
+      
+      
+      
+      <form ng-submit="submit()" >
+
+           <div class="list list-inset">
+                 <div class="checkbox" style="display:inline-block">
+                     
+               <input type="radio" name="type" value="Bus" ng-model="Bus" >
+                  
+                  <div class="item-content">
+               Bus
+                  </div>
+                    
+     <input type="radio" name="type" value="Train" ng-model="Train" >
+               
+               <div class="item-content">
+              Train
+                  </div>
+                     
+
+                <input type="radio" name="type" value="Metro" ng-model="Metro" >      
+               <div class="item-content">
+      Metro
+                   
+    </div>
+      </div>       
+               
+         <label class="item item-input item-floating-label">
+        <span class="input-label">Matricule</span>
+        <input type="text" ng-model="matricule" placeholder="matricule">
+      </label>  
+          
+          
+          <label class="item item-input item-floating-label">
+        <span class="input-label">Prix</span>
+        <input type="text" ng-model="prix" placeholder="Enter price">
+      </label>
+          
+              
+          
+               
+            <input type="submit"  class="button button-block button-positive" id="submit" value="Add "  ng-click="ajouterBus(matricule,prix)"  />
+          
+
+          
+          
+              
+          
+      </form>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+     
+    </ion-list>
+  </ion-content>
+</ion-view>
+ </div>
+</div>
+     
+</div>
+     
+
+     

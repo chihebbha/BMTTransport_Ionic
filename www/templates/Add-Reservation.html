@@ -1,0 +1,90 @@
+<ion-view view-title="Add Reservation">
+  
+  <ion-content>
+      <div align="center"><br> <img src="../img/logo.png"/></div>
+     <br><br>
+      <div  style="margin-left:240px">
+       
+        <font color="grey">{{'' | currentdate}}</font>
+         
+      </div>
+   <div class="container" ng-controller="AddReservation">
+ 
+  <form role="form" ng-controller="CusCtrl">
+    <div class="form-group">
+      
+       
+                    <label for="transportation">Transportation : </label>
+      
+        	
+         <div class="checkbox">
+
+      <label>Metro  <input type="checkbox" ng-model="metro"/></label>
+            
+           
+    </div>
+    
+         <div class="checkbox">
+          
+      
+             <label>Bus <input type="checkbox" ng-model="bus"/></label>
+    </div>
+
+<br>
+    </div>
+    <div class="form-group" ng-controller="ReservationCtrl">
+        <table>
+            <tr>
+                <td>
+      <label for="pwd">Itinerary    :  </label></td>
+     <td> <select  style="width:15em"  name="focus" required class="search-box"   ng-model="itinerary" >
+         <option valeur="valeur" selected="selected">Choose your Itinerary </option>
+        <option  ng-repeat="(key, itineraire) in itineraires" value="{{itineraire.ordre_Itinerary}}">
+            
+            
+            {{itineraire.arret_Itinerary}}</option>
+        </select>  <br><br> </td></tr><tr>  <td>
+ <label for="pwd">Customer:</label></td>
+    <td> <select style="width:15em" ng-model="client"  name="focus" required class="search-box" >
+        <option ng-repeat="(key, cus) in cuss" value="{{cus.id_Person}}">
+            
+            
+            {{cus.login_Person}}</option>
+        </select>  
+        </td>
+    </tr>
+            
+      </table>
+      
+    <br>
+     
+        <label  ng-if="bus && metro && licence" >Price :<font  color="#d71868" > {{itinerary*9.9}} </font> Dt</label>
+        <label    ng-if="bus && !metro && licence" >Price :<font color="#d71868"> {{itinerary*7.4}} </font>Dt</label>
+        <label    ng-if="!bus && metro && licence">Price :<font color="#d71868"> {{itinerary*6.8}} </font>Dt</label><br><br>
+        
+        
+        
+
+ </div >
+      <input type="checkbox" ng-model="licence" >
+      <div ng-controller="openPDF" style="display:inline-block">
+          
+              
+      
+          
+      I agree the
+      <a ng-click="open()">reservations regulation</a>
+      </div>
+      <br><br>
+         <center> 
+<button ng-if="bus && metro && licence" type="submit" class="btn btn-info" ng-click="ajouter(60,itinerary,client)" >reserve</button> 
+       <button ng-if="!bus && metro && licence " type="submit" class="btn btn-info" ng-click="ajouter(30,itinerary,client)">reserve</button> 
+<button ng-if="bus && !metro && licence" type="submit" class="btn btn-info" ng-click="ajouter(40,itinerary,client)">reserve</button></center>
+       
+        </form>
+
+        </div>
+
+
+  </ion-content>
+</ion-view>

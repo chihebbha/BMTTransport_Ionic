@@ -1,0 +1,58 @@
+<ion-view view-title="Home">
+  <ion-content class="padding item-avatar item-icon-right" >
+   
+   <div align="center"> <img src="../img/logo.png"/></div>
+    <div class="list card">
+
+  <a href="#/tab/ajoutTrain" class="item item-icon-left" style="background-image: radial-gradient(#f1faff,#bde4fa );border-radius: 125px;">
+     
+      
+      <i class="ion-android-bus"></i>
+      <i class="ion-android-subway"></i>
+       <i class="ion-android-train"></i>
+      
+      <b  style="margin-left:68px">Fleet </b> 
+   
+   
+  </a>
+<br>
+  <a href="#/tab/ListReservations" class="item item-icon-left" style="background-image: radial-gradient(#f1faff,#bde4fa );border-radius: 125px;">
+    <i class="ion-clipboard"></i>
+      <b style="margin-left:100px">Reservation</b> 
+    
+  </a>
+<br>
+  <a href="#/tab/claim" class="item item-icon-left" style="background-image: radial-gradient(#f1faff,#bde4fa );border-radius: 125px;">
+    <i class="ion-compose"></i>
+     <b style="margin-left:100px">claiming</b>
+  </a>
+       
+        <br>
+         <a href="#/bus" class="item item-icon-left" style="background-image: radial-gradient(#f1faff,#bde4fa );border-radius: 125px;">
+    <i class="ion-ios-location"></i>
+     <b style="margin-left:100px">Our transportation</b>
+  </a><br>
+        
+           <a href="#/tab/plannings" class="item item-icon-left" style="background-image: radial-gradient(#f1faff,#bde4fa );border-radius: 125px;">
+    <i class="ion-earth"></i>
+     <b style="margin-left:100px">Our Plannigs</b>
+  </a>
+
+    <form ng-submit="submit()" ng-controller="addSubscriptionCtrl">
+
+           <div class="list list-inset" align="center">
+
+
+            <input type="submit" ng-if="!validation" ng-click="showAlert()" class="button ion-checkmark-circled button-positive" id="submit" value="Subscribe |>" />
+          </div>
+
+      </form>
+       
+      
+     
+
+  
+
+</div>
+  </ion-content>
+</ion-view>
